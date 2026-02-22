@@ -726,6 +726,31 @@
         <section id="projects">
           <div class="section-title">개인 프로젝트</div>
           
+          <!-- 새로 추가된 프로젝트 -->
+          <div class="project" id="projects_4">
+            <div class="project-title">AI 오케스트레이션: 초등 교과 맞춤형 문제집 자동 생성 파이프라인</div>
+            <div class="project-desc">활동 : 2026.02.22 ~ 2026.02.23 | 개인 협업 프로젝트
+
+• 프로젝트 개요
+- AI(Claude, GPT)와의 고도화된 프롬프트 엔지니어링을 통해 기획부터 로직 구현까지 진행한 AI 협업 프로젝트
+- 시중 문제집의 높은 비용과 수동 문서 작업의 번거로움을 해결하기 위해, AI가 생성한 문제를 즉시 PDF로 변환 및 출력하는 자동화 도구 개발
+
+• 사용 기술 및 환경
+- AI Tools: Claude 3.5 Sonnet(제작엔진), GPT-4o mini(api) (로직 설계 및 프롬프트 엔지니어링)
+- Environment: Python, PyQt5 (GUI), OpenAI API, ReportLab (PDF 엔진)
+
+• 주요 성과 및 결과
+- [워크플로우 통합] AI 문제 생성 - 전처리 - PDF 레이아웃 구성 - 인쇄 인터페이스의 완전 자동화
+- [트러블슈팅] 시스템 폰트 자동 탐색 로직을 제안하여 한글 렌더링 및 이식성 문제 해결
+- [사용자 경험] 다크모드 UI 및 실시간 미리보기 확대/축소 기능을 도입하여 실제 학습 도구 사용 수준의 편의성 완성도 확보
+- [비용] 5개의 문제 생산시 사용되는 토큰은 GPT-4o mini(api) 평균 약 800토큰으로 약 0.4원~0.5원 수준입니다. 시중 문제집 5문제당 약 100원~150원 대비 약 250배 차이로 매우 저렴한 가격으로 문제 생성이 가능합니다.
+
+• 나의 역할 (AI Orchestrator &amp; Architect)
+- 요구사항 정의: 교육적 목적에 부합하는 문제 유형 및 난이도 조절 로직 설계
+- 프롬프트 설계: JSON 구조 출력을 강제하고 초등 교육 페르소나를 주입하여 데이터 무결성 확보 제시
+- 시스템 통합 및 디버깅: AI가 생성한 코드를 검증하고, 모듈 간 데이터 흐름 조율 및 성능 최적화</div>
+          </div>
+
           <div class="project" id="projects_3">
             <div class="project-title">인공지능 개인 협업 프로젝트</div>
             <div class="project-desc">활동 : 2026.01.31. ~ 진행중
@@ -744,6 +769,7 @@
 -
             </div>
           </div>
+        </section>
   
         <section id="projects">
           <div class="section-title">팀 프로젝트</div>
@@ -827,8 +853,9 @@
         <section>
           <div class="section-title">소식</div>
           <p style="font-size:13px; color:var(--muted);">
+            2026-02-22 초등 교과 문제집 자동 생성 AI 파이프라인 프로젝트 완료(개인)<br>
             2026-01-28 국립경북대학교 고령친화 아이디어 공모전 진행중(개인)<br>
-            2026-01-31 인공지늠 협업 프로젝트 진행중(개인)<br>
+            2026-01-31 인공지능 협업 프로젝트 진행중(개인)<br>
           </p>
         </section>
 
@@ -863,7 +890,7 @@
           <div class="section-title">바로가기</div>
           <p style="font-size:13px;">
             <a href="#publications" style="color:var(--primary);">논문</a> · 
-            <a href="#projects_3" style="color:var(--primary);">프로젝트</a> · 
+            <a href="#projects_4" style="color:var(--primary);">프로젝트</a> · 
             <a href="#activities" style="color:var(--primary);">활동</a>
           </p>
         </section>
@@ -872,7 +899,7 @@
     </div>
 
     <footer>
-      © 2026 박정민 · 최종 수정: <span id="last-update">2026-02-01</span>
+      © 2026 박정민 · 최종 수정: <span id="last-update">2026-02-23</span>
     </footer>
     
   </div>

@@ -745,7 +745,12 @@
 • 나의 역할 (AI Orchestrator &amp; Architect)
 - 요구사항 정의: 교육적 목적에 부합하는 문제 유형 및 난이도 조절 로직 설계, 생성된 문제 수정 및 확대 기능, 다크모드 UI 제안 및 디자인, 저장 방식 세분화 방식 제안
 - 프롬프트 설계: JSON 구조 출력을 강제하고 초등 교육 페르소나를 주입하여 데이터 무결성 확보
-- 시스템 통합 및 디버깅: AI가 생성한 코드를 검증하고, 모듈 간 데이터 흐름 조율 및 성능 최적화</div>
+- 시스템 통합 및 디버깅: AI가 생성한 코드를 검증하고, 모듈 간 데이터 흐름 조율 및 성능 최적화
+  • 버전 히스토리
+- v1 (3st_worksheet_generator.py / 02.22) : 기본 문제 생성 및 PDF·PNG 출력, 다크모드 UI, 실시간 미리보기 (확대/축소 슬라이더)
+- v1-edu (c_worksheet_generator.py / 03.07) : C언어 교사 배포용 파생 — Gemini 2.5 Flash로 엔진 교체(무료 일 10회), 인라인 문제 편집, 2단계 AI 교차검증 추가
+- v2 (진행중) : 인라인 문제 편집, AI 교차검증 추가 (교차검증 토글 선택 가능)
+  </div>
 
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
               <a href="https://drive.google.com/file/d/1AuuyStWdN2weUgRU7hVoPE58TrHRyb0A/view?usp=drive_link" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; background:var(--primary); color:white; border-radius:8px; text-decoration:none; font-size:14px; transition:opacity 0.2s ease;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">

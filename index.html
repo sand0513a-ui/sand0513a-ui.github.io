@@ -10,7 +10,6 @@
   <meta property="og:image" content="Gemini_Generated_Image_94khiw94khiw94kh.png">
   <link rel="icon" type="image/png" href="megumin_favicon.png">
   <style>
-    /* ==================== 기본 설정 ==================== */
     :root {
       --primary: #2563eb;
       --bg: #fff;
@@ -22,7 +21,6 @@
       --shadow: rgba(0,0,0,0.05);
     }
 
-    /* 다크모드 변수 */
     [data-theme="dark"] {
       --primary: #3b82f6;
       --bg: #1a1a1a;
@@ -44,7 +42,6 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* ==================== 다크모드 토글 버튼 ==================== */
     .theme-toggle {
       position: fixed;
       top: 20px;
@@ -64,16 +61,9 @@
       box-shadow: 0 2px 8px var(--shadow);
     }
 
-    .theme-toggle:hover {
-      transform: scale(1.1);
-      border-color: var(--primary);
-    }
+    .theme-toggle:hover { transform: scale(1.1); border-color: var(--primary); }
+    .theme-toggle:active { transform: scale(0.95); }
 
-    .theme-toggle:active {
-      transform: scale(0.95);
-    }
-
-    /* ==================== 메인 컨테이너 ==================== */
     .container {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -84,7 +74,6 @@
       transition: background-color 0.3s ease;
     }
 
-    /* ==================== 헤더 영역 ==================== */
     header {
       display: flex;
       gap: 24px;
@@ -101,53 +90,19 @@
       flex-shrink: 0;
       transition: transform 0.3s ease;
     }
+    .profile-img:hover { transform: scale(1.05); }
 
-    .profile-img:hover {
-      transform: scale(1.05);
-    }
+    .header-info { flex: 1; min-width: 0; }
 
-    .header-info {
-      flex: 1;
-      min-width: 0;
-    }
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; word-wrap: break-word; }
 
-    h1 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      word-wrap: break-word;
-    }
+    .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 12px;
-    }
+    .contact-info { font-size: 14px; color: var(--muted); word-break: break-all; }
+    .contact-info a { color: var(--primary); text-decoration: none; transition: opacity 0.2s ease; }
+    .contact-info a:hover { opacity: 0.7; }
 
-    .contact-info {
-      font-size: 14px;
-      color: var(--muted);
-      word-break: break-all;
-    }
-
-    .contact-info a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: opacity 0.2s ease;
-    }
-
-    .contact-info a:hover {
-      opacity: 0.7;
-    }
-
-    /* ==================== 네비게이션 ==================== */
-    nav {
-      margin: 24px 0;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
+    nav { margin: 24px 0; display: flex; gap: 10px; flex-wrap: wrap; }
     nav a {
       padding: 8px 16px;
       background: var(--card-bg);
@@ -158,14 +113,8 @@
       transition: all 0.2s;
       border: 1px solid transparent;
     }
+    nav a:hover { background: var(--primary); color: white; transform: translateY(-2px); }
 
-    nav a:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    /* ==================== 메인 콘텐츠 영역 ==================== */
     .content {
       display: grid;
       grid-template-columns: 1fr 300px;
@@ -173,14 +122,8 @@
       margin-top: 32px;
     }
 
-    main {
-      min-height: 400px;
-      min-width: 0;
-    }
-
-    section {
-      margin-bottom: 32px;
-    }
+    main { min-height: 400px; min-width: 0; }
+    section { margin-bottom: 32px; }
 
     .section-title {
       font-size: 20px;
@@ -190,7 +133,6 @@
       border-bottom: 2px solid var(--primary);
     }
 
-    /* ==================== 사이드바 ==================== */
     aside {
       background: var(--card-bg);
       padding: 20px;
@@ -198,23 +140,10 @@
       border: 1px solid var(--border);
       height: fit-content;
     }
+    aside section { margin-bottom: 24px; }
+    aside .section-title { font-size: 16px; border-bottom: 1px solid var(--border); }
 
-    aside section {
-      margin-bottom: 24px;
-    }
-
-    aside .section-title {
-      font-size: 16px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* ==================== SNS 링크 섹션 ==================== */
-    .social-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
+    .social-links { display: flex; gap: 12px; flex-wrap: wrap; }
     .social-link {
       display: inline-flex;
       align-items: center;
@@ -228,79 +157,118 @@
       font-size: 13px;
       transition: all 0.2s ease;
     }
+    .social-link:hover { background: var(--primary); color: white; border-color: var(--primary); transform: translateY(-2px); }
+    .social-link svg { width: 18px; height: 18px; fill: currentColor; }
 
-    .social-link:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-      transform: translateY(-2px);
+    ul.publications { list-style: none; padding: 0; }
+    ul.publications li { margin-bottom: 16px; padding-left: 20px; position: relative; word-wrap: break-word; }
+    ul.publications li:before { content: "•"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+    .pub-link { color: var(--primary); text-decoration: none; margin-left: 8px; font-size: 14px; transition: opacity 0.2s ease; }
+    .pub-link:hover { opacity: 0.7; }
+
+    /* ==================== 프로젝트 섹션 (가독성 개선) ==================== */
+    .project {
+      margin-bottom: 28px;
+      padding: 20px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .project:last-child { border-bottom: none; }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 17px;
+      margin-bottom: 12px;
+      color: var(--text);
+      word-wrap: break-word;
+      line-height: 1.5;
     }
 
-    .social-link svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
+    /* 날짜/개요 줄 */
+    .project-meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      padding: 6px 10px;
+      background: var(--card-bg);
+      border-radius: 6px;
+      border-left: 3px solid var(--primary);
     }
 
-    /* ==================== 리스트 스타일 ==================== */
-    ul.publications {
+    /* 섹션 그룹 (• 프로젝트 개요 등) */
+    .desc-group {
+      margin-bottom: 14px;
+    }
+
+    .desc-group-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+      padding-bottom: 3px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .desc-items {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
-    ul.publications li {
-      margin-bottom: 16px;
-      padding-left: 20px;
+    .desc-items li {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.75;
+      padding: 2px 0 2px 14px;
       position: relative;
       word-wrap: break-word;
     }
 
-    ul.publications li:before {
-      content: "•";
+    .desc-items li::before {
+      content: "–";
       position: absolute;
       left: 0;
-      color: var(--primary);
+      color: var(--border);
       font-weight: bold;
     }
 
-    .pub-link {
-      color: var(--primary);
-      text-decoration: none;
-      margin-left: 8px;
-      font-size: 14px;
-      transition: opacity 0.2s ease;
+    /* 버전 히스토리 특별 스타일 */
+    .version-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 6px;
     }
 
-    .pub-link:hover {
-      opacity: 0.7;
-    }
-
-    /* ==================== 프로젝트 섹션 ==================== */
-    .project {
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .project:last-child {
-      border-bottom: none;
-    }
-
-    .project-title {
+    .version-block .version-label {
+      font-size: 11px;
       font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 8px;
-      color: var(--text);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .version-item {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      padding: 3px 0 3px 14px;
+      position: relative;
       word-wrap: break-word;
     }
 
-    .project-desc {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 12px;
-      line-height: 1.8;
-      white-space: pre-line;
-      word-wrap: break-word;
+    .version-item::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 11px;
+      top: 5px;
     }
 
     /* ==================== 이미지 갤러리 ==================== */
@@ -321,28 +289,12 @@
       border: 1px solid var(--border);
       transition: all 0.3s ease;
     }
-
-    .gallery-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px var(--shadow);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-
+    .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 8px 16px var(--shadow); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .gallery-item:hover img { transform: scale(1.1); }
     .gallery-item .image-caption {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       background: linear-gradient(transparent, rgba(0,0,0,0.7));
       color: white;
       padding: 8px;
@@ -350,102 +302,50 @@
       transform: translateY(100%);
       transition: transform 0.3s ease;
     }
-
-    .gallery-item:hover .image-caption {
-      transform: translateY(0);
-    }
+    .gallery-item:hover .image-caption { transform: translateY(0); }
 
     /* ==================== 라이트박스 ==================== */
     .lightbox {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95);
       z-index: 9999;
       justify-content: center;
       align-items: center;
     }
-
-    .lightbox.active {
-      display: flex;
-    }
-
-    .lightbox-content {
-      position: relative;
-      max-width: 90%;
-      max-height: 90%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-content img {
-      max-width: 100%;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-
+    .lightbox.active { display: flex; }
+    .lightbox-content { position: relative; max-width: 90%; max-height: 90%; display: flex; align-items: center; justify-content: center; }
+    .lightbox-content img { max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 8px; }
     .lightbox-close {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 40px;
-      color: white;
-      cursor: pointer;
+      top: 20px; right: 20px;
+      font-size: 40px; color: white; cursor: pointer;
       background: rgba(0,0,0,0.5);
-      width: 50px;
-      height: 50px;
+      width: 50px; height: 50px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       transition: all 0.3s ease;
     }
-
-    .lightbox-close:hover {
-      background: rgba(255,255,255,0.2);
-      transform: rotate(90deg);
-    }
-
+    .lightbox-close:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
     .lightbox-nav {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 50px;
-      color: white;
-      cursor: pointer;
+      top: 50%; transform: translateY(-50%);
+      font-size: 50px; color: white; cursor: pointer;
       background: rgba(0,0,0,0.5);
-      width: 60px;
-      height: 60px;
+      width: 60px; height: 60px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       transition: all 0.3s ease;
       user-select: none;
     }
-
-    .lightbox-nav:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
-    .lightbox-prev {
-      left: 20px;
-    }
-
-    .lightbox-next {
-      right: 20px;
-    }
-
+    .lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
     .lightbox-caption {
       position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 20px; left: 50%; transform: translateX(-50%);
       color: white;
       background: rgba(0,0,0,0.7);
       padding: 12px 24px;
@@ -455,7 +355,6 @@
       text-align: center;
     }
 
-    /* ==================== 푸터 ==================== */
     footer {
       margin-top: 40px;
       padding-top: 20px;
@@ -465,190 +364,54 @@
       font-size: 13px;
     }
 
-    /* ==================== 반응형 디자인 ==================== */
-    
-    /* 태블릿 크기 */
     @media (max-width: 900px) {
-      .content {
-        grid-template-columns: 1fr;
-      }
-      
-      header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      
-      .profile-img {
-        width: 120px;
-        height: 120px;
-      }
+      .content { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: center; text-align: center; }
+      .profile-img { width: 120px; height: 120px; }
     }
 
-    /* 모바일 크기 */
     @media (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
-      
-      .container {
-        padding: 20px;
-        border-radius: 8px;
-      }
-
-      .theme-toggle {
-        top: 10px;
-        right: 10px;
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-      }
-      
-      header {
-        gap: 16px;
-        padding-bottom: 20px;
-      }
-      
-      .profile-img {
-        width: 100px;
-        height: 100px;
-      }
-      
-      h1 {
-        font-size: 20px;
-      }
-      
-      h1 span {
-        font-size: 14px !important;
-      }
-      
-      .subtitle {
-        font-size: 14px;
-      }
-      
-      .contact-info {
-        font-size: 13px;
-      }
-      
-      nav {
-        gap: 8px;
-      }
-      
-      nav a {
-        flex: 1 1 calc(50% - 4px);
-        text-align: center;
-        padding: 10px 12px;
-        font-size: 13px;
-      }
-      
-      .content {
-        gap: 24px;
-        margin-top: 24px;
-      }
-      
-      .section-title {
-        font-size: 18px;
-      }
-      
-      aside {
-        padding: 16px;
-      }
-      
-      aside .section-title {
-        font-size: 15px;
-      }
-      
-      .project-desc {
-        font-size: 13px;
-        line-height: 1.7;
-      }
-
-      .social-links {
-        gap: 8px;
-      }
-
-      .social-link {
-        flex: 1 1 calc(50% - 4px);
-        justify-content: center;
-        font-size: 12px;
-      }
-
-      .project-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 8px;
-      }
-
-      .lightbox-nav {
-        width: 50px;
-        height: 50px;
-        font-size: 40px;
-      }
-
-      .lightbox-close {
-        width: 40px;
-        height: 40px;
-        font-size: 30px;
-        top: 10px;
-        right: 10px;
-      }
-
-      .lightbox-prev {
-        left: 10px;
-      }
-
-      .lightbox-next {
-        right: 10px;
-      }
+      body { padding: 10px; }
+      .container { padding: 20px; border-radius: 8px; }
+      .theme-toggle { top: 10px; right: 10px; width: 45px; height: 45px; font-size: 20px; }
+      header { gap: 16px; padding-bottom: 20px; }
+      .profile-img { width: 100px; height: 100px; }
+      h1 { font-size: 20px; }
+      h1 span { font-size: 14px !important; }
+      .subtitle { font-size: 14px; }
+      .contact-info { font-size: 13px; }
+      nav { gap: 8px; }
+      nav a { flex: 1 1 calc(50% - 4px); text-align: center; padding: 10px 12px; font-size: 13px; }
+      .content { gap: 24px; margin-top: 24px; }
+      .section-title { font-size: 18px; }
+      aside { padding: 16px; }
+      aside .section-title { font-size: 15px; }
+      .social-links { gap: 8px; }
+      .social-link { flex: 1 1 calc(50% - 4px); justify-content: center; font-size: 12px; }
+      .project-gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+      .lightbox-nav { width: 50px; height: 50px; font-size: 40px; }
+      .lightbox-close { width: 40px; height: 40px; font-size: 30px; top: 10px; right: 10px; }
+      .lightbox-prev { left: 10px; }
+      .lightbox-next { right: 10px; }
     }
 
-    /* 매우 작은 모바일 */
     @media (max-width: 400px) {
-      .container {
-        padding: 16px;
-      }
-      
-      h1 {
-        font-size: 18px;
-      }
-      
-      .profile-img {
-        width: 90px;
-        height: 90px;
-      }
-      
-      nav a {
-        flex: 1 1 100%;
-      }
-      
-      .section-title {
-        font-size: 16px;
-      }
-      
-      .project-title {
-        font-size: 15px;
-      }
-      
-      .project-desc {
-        font-size: 12px;
-      }
-
-      .social-link {
-        flex: 1 1 100%;
-      }
-
-      .project-gallery {
-        grid-template-columns: 1fr;
-      }
+      .container { padding: 16px; }
+      h1 { font-size: 18px; }
+      .profile-img { width: 90px; height: 90px; }
+      nav a { flex: 1 1 100%; }
+      .section-title { font-size: 16px; }
+      .project-title { font-size: 15px; }
+      .social-link { flex: 1 1 100%; }
+      .project-gallery { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- 다크모드 토글 버튼 -->
   <button class="theme-toggle" id="themeToggle" aria-label="다크모드 토글">
     <span id="themeIcon">🌙</span>
   </button>
 
-  <!-- 라이트박스 -->
   <div class="lightbox" id="lightbox">
     <span class="lightbox-close" id="lightboxClose">&times;</span>
     <span class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</span>
@@ -663,15 +426,12 @@
     
     <header>
       <img class="profile-img" src="parkjeongmin_face.jpg" alt="프로필 사진">
-      
       <div class="header-info">
         <h1>박정민 <span style="font-size:16px; color:var(--muted);">(26.01.28공익입대)</span></h1>
-        
         <div class="subtitle">
           컴퓨터공학과<br>
           한국교통대학교, 충주(휴학중)
         </div>
-        
         <div class="contact-info">
           📧 <a href="mailto:sand2005.05.13im@gmail.com">sand2005.05.13im@gmail.com</a>
         </div>
@@ -695,7 +455,6 @@
             저는 한국교통대학교에서 컴퓨터공학을 전공하고 있는 박정민입니다. 
             혼자서 작업을 하거나 공모전 활동을 주로 합니다.
           </p>
-          
           <p style="margin-top:12px; font-size:14px; color:var(--muted);">
             현재는 취미로 활동중
           </p>
@@ -710,7 +469,6 @@
 
         <section id="publications">
           <div class="section-title">학술 논문</div>
-          
           <ul class="publications">
             <li>
               <strong>[논문 제목(kci)]</strong><br>
@@ -723,45 +481,67 @@
           </ul>
         </section>
         
+        <!-- ======= 개인 프로젝트 ======= -->
         <section id="projects">
-      <div class="section-title">개인 프로젝트</div>
+          <div class="section-title">개인 프로젝트</div>
           
-      <div class="project" id="projects_4">
-<div class="project-title">AI 오케스트레이션: 교과 맞춤형 문제집 자동 생성 파이프라인</div>
-<div class="project-desc">활동 : 2026.02.22 ~ 2026.02.23 | 1인 개발 / AI 협업
-• 프로젝트 개요
-- Claude와의 고도화된 프롬프트 엔지니어링을 통해 기획부터 로직 구현까지 진행한 AI 협업 프로젝트
-- 시중 문제집의 높은 비용과 수동 문서 작업의 번거로움을 해결하기 위해, AI가 생성한 문제를 즉시 PDF로 변환 및 출력하는 자동화 도구 개발
+          <!-- 프로젝트 4: AI 오케스트레이션 -->
+          <div class="project" id="projects_4">
+            <div class="project-title">AI 오케스트레이션: 교과 맞춤형 문제집 자동 생성 파이프라인</div>
+            <div class="project-meta">2026.02.22 – 2026.02.23 &nbsp;|&nbsp; 1인 개발 / AI 협업</div>
 
-• 사용 기술 및 환경
-- AI Tools: GPT-4o mini (초등용), Gemini 2.5 Flash (교사 배포용) — API, 문제 생성
-- 개발 보조: Claude Sonnet (로직 설계, 코드 작성, 디버깅)
-- Environment: Python, PyQt5 (GUI), OpenAI API 및 Gemini API, ReportLab (PDF 엔진)
+            <div class="desc-group">
+              <div class="desc-group-title">프로젝트 개요</div>
+              <ul class="desc-items">
+                <li>Claude와의 고도화된 프롬프트 엔지니어링을 통해 기획부터 로직 구현까지 진행한 AI 협업 프로젝트</li>
+                <li>시중 문제집의 높은 비용과 수동 문서 작업의 번거로움을 해결하기 위해, AI가 생성한 문제를 즉시 PDF로 변환 및 출력하는 자동화 도구 개발</li>
+              </ul>
+            </div>
 
-• 주요 성과 및 결과
-- [워크플로우 통합] AI 문제 생성 - 전처리 - PDF 레이아웃 구성 - 인쇄 인터페이스의 완전 자동화
-- [트러블슈팅] 시스템 폰트 자동 탐색 로직을 제안하여 한글 렌더링 및 이식성 문제 해결
-- [사용자 경험] 다크모드 UI 및 실시간 미리보기 확대/축소 기능을 도입, 생성된 문제·힌트·정답 직접 수정 기능을 추가하여 실제 학습 도구 수준의 편의성 확보
-- [성능] 기본 3문제 생성 시 약 8초, 문제 추가당 약 1~2초 소요로 빠른 응답성 확보
-- [비용] 5문제 생성 시 GPT-4o mini API 평균 약 800토큰 소모 → 약 0.4원~0.5원 수준 (OpenAI 공식 요금 명세 기준 산출). 시중 문제집 5문제당 약 100원~150원 대비 약 250배 저렴
+            <div class="desc-group">
+              <div class="desc-group-title">사용 기술 및 환경</div>
+              <ul class="desc-items">
+                <li><strong>AI Tools:</strong> GPT-4o mini (초등용), Gemini 2.5 Flash (교사 배포용) — API, 문제 생성</li>
+                <li><strong>개발 보조:</strong> Claude Sonnet (로직 설계, 코드 작성, 디버깅)</li>
+                <li><strong>Environment:</strong> Python, PyQt5 (GUI), OpenAI API 및 Gemini API, ReportLab (PDF 엔진)</li>
+              </ul>
+            </div>
 
-• 나의 역할 (AI Orchestrator &amp; Architect)
-- 요구사항 정의: 교육적 목적에 부합하는 문제 유형 및 난이도 조절 로직 설계, 인라인 문제 편집 및 확대 기능, 다크모드 UI 제안 및 디자인, 저장 방식 세분화 제안
-- 프롬프트 설계: JSON 구조 출력을 강제하고 교과 맞춤 페르소나를 주입하여 데이터 무결성 확보, 2단계 AI 교차검증 파이프라인 설계
-- 시스템 통합 및 디버깅: 모듈 간 데이터 흐름 조율, 32비트 Python 환경 호환 문제 트러블슈팅, bat 스크립트 기반 무설치 배포 방식 설계
-- 파생 버전 기획 및 배포: v1-edu를 교사 실사용 환경에 맞게 독립 브랜치로 설계하고 현직 교사에게 직접 전달
+            <div class="desc-group">
+              <div class="desc-group-title">주요 성과 및 결과</div>
+              <ul class="desc-items">
+                <li><strong>[워크플로우 통합]</strong> AI 문제 생성 → 전처리 → PDF 레이아웃 구성 → 인쇄 인터페이스의 완전 자동화</li>
+                <li><strong>[트러블슈팅]</strong> 시스템 폰트 자동 탐색 로직을 제안하여 한글 렌더링 및 이식성 문제 해결</li>
+                <li><strong>[사용자 경험]</strong> 다크모드 UI 및 실시간 미리보기 확대/축소 기능 도입, 생성된 문제·힌트·정답 직접 수정 기능 추가</li>
+                <li><strong>[성능]</strong> 기본 3문제 생성 시 약 8초, 문제 추가당 약 1~2초 소요로 빠른 응답성 확보</li>
+                <li><strong>[비용]</strong> 5문제 생성 시 GPT-4o mini API 평균 약 800토큰 소모 → 약 0.4원~0.5원 수준. 시중 문제집 5문제당 약 100~150원 대비 약 250배 저렴</li>
+              </ul>
+            </div>
 
-• 버전 히스토리
+            <div class="desc-group">
+              <div class="desc-group-title">나의 역할 (AI Orchestrator & Architect)</div>
+              <ul class="desc-items">
+                <li><strong>요구사항 정의:</strong> 교육적 목적에 부합하는 문제 유형 및 난이도 조절 로직 설계, 인라인 문제 편집 및 확대 기능, 다크모드 UI 제안 및 디자인, 저장 방식 세분화 제안</li>
+                <li><strong>프롬프트 설계:</strong> JSON 구조 출력을 강제하고 교과 맞춤 페르소나를 주입하여 데이터 무결성 확보, 2단계 AI 교차검증 파이프라인 설계</li>
+                <li><strong>시스템 통합 및 디버깅:</strong> 모듈 간 데이터 흐름 조율, 32비트 Python 환경 호환 문제 트러블슈팅, bat 스크립트 기반 무설치 배포 방식 설계</li>
+                <li><strong>파생 버전 기획 및 배포:</strong> v1-edu를 교사 실사용 환경에 맞게 독립 브랜치로 설계하고 현직 교사에게 직접 전달</li>
+              </ul>
+            </div>
 
-  [메인 라인]
-  - v1 (3rd_worksheet_generator.py / 2026.02.22) : 초등용 — 기본 문제 생성 및 PDF·PNG 출력, 다크모드 UI, 실시간 미리보기 (확대/축소 슬라이더)
-  - v2 (진행중) : 인라인 문제 편집, AI 교차검증 토글 추가
+            <div class="desc-group">
+              <div class="desc-group-title">버전 히스토리</div>
+              <div class="version-block">
+                <div class="version-label">메인 라인</div>
+                <div class="version-item"><strong>v1</strong> (3rd_worksheet_generator.py · 2026.02.22) — 초등용: 기본 문제 생성 및 PDF·PNG 출력, 다크모드 UI, 실시간 미리보기 (확대/축소 슬라이더)</div>
+                <div class="version-item"><strong>v2</strong> (진행중) — 인라인 문제 편집, AI 교차검증 토글 추가</div>
+              </div>
+              <div class="version-block" style="margin-top:8px;">
+                <div class="version-label">파생 브랜치</div>
+                <div class="version-item"><strong>v1-edu</strong> (c_worksheet_generator_edu.py · 2026.03.07) — C언어 교사 배포용: Gemini 2.5 Flash 엔진 교체, 인라인 문제 편집, AI 교차검증 추가 → v1-edu 실배포 검증을 통해 위 기능을 v2 메인 라인에 반영</div>
+              </div>
+            </div>
 
-  [파생 브랜치]
-  - v1-edu (c_worksheet_generator_edu.py / 2026.03.07) : C언어 교사 배포용 — Gemini 2.5 Flash 엔진 교체, 인라인 문제 편집, AI 교차검증 추가
-    → v1-edu 실배포 검증을 통해 위 기능을 v2 메인 라인에 반영
-</div>
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; margin-top:4px;">
               <a href="https://drive.google.com/drive/folders/1UMB7EtCeLWyBPyHFGIP5eONNe3wKD5vw?usp=sharing" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; background:var(--primary); color:white; border-radius:8px; text-decoration:none; font-size:14px; transition:opacity 0.2s ease;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 파일 다운받기
@@ -772,7 +552,6 @@
               </a>
             </div>
 
-            <!-- 이미지 갤러리 -->
             <div class="project-gallery">
               <div class="gallery-item" data-src="https://github.com/user-attachments/assets/c4eeb089-f234-4580-9368-4a6bf9e0f49c" data-caption="메인화면">
                 <img src="https://github.com/user-attachments/assets/c4eeb089-f234-4580-9368-4a6bf9e0f49c" alt="메인화면">
@@ -785,78 +564,129 @@
             </div>
           </div>
 
+          <!-- 프로젝트 3: 인공지능 개인 협업 -->
           <div class="project" id="projects_3">
             <div class="project-title">인공지능 개인 협업 프로젝트</div>
-            <div class="project-desc">활동 : 2026.01.31. ~ 진행중
+            <div class="project-meta">2026.01.31 – 진행중</div>
 
-• 프로젝트 개요
-- 현재 개발자를 대체하고있는 인공지능, 다른 전공 분야의 공모전에서 인공지능의 도움만으로 그 전공 공부없이 공모전 수상이 가능할까.
+            <div class="desc-group">
+              <div class="desc-group-title">프로젝트 개요</div>
+              <ul class="desc-items">
+                <li>현재 개발자를 대체하고 있는 인공지능, 다른 전공 분야의 공모전에서 인공지능의 도움만으로 그 전공 공부 없이 공모전 수상이 가능할까.</li>
+              </ul>
+            </div>
 
-• 사용 기술 및 환경
-- chatGPT(인공지능)
-- Gemini(인공지능)
-- Claude(인공지능)
+            <div class="desc-group">
+              <div class="desc-group-title">사용 기술 및 환경</div>
+              <ul class="desc-items">
+                <li>ChatGPT (인공지능)</li>
+                <li>Gemini (인공지능)</li>
+                <li>Claude (인공지능)</li>
+              </ul>
+            </div>
 
-• 주요 성과 및 결과
--
-• 내가 주요로 한 것
--
+            <div class="desc-group">
+              <div class="desc-group-title">주요 성과 및 결과</div>
+              <ul class="desc-items">
+                <li>—</li>
+              </ul>
+            </div>
+
+            <div class="desc-group">
+              <div class="desc-group-title">나의 역할</div>
+              <ul class="desc-items">
+                <li>—</li>
+              </ul>
             </div>
           </div>
         </section>
-  
-        <section id="projects">
+
+        <!-- ======= 팀 프로젝트 ======= -->
+        <section id="team-projects">
           <div class="section-title">팀 프로젝트</div>
-          
+
+          <!-- 프로젝트 2: 학식모야 -->
           <div class="project" id="projects_2">
             <div class="project-title">Student Challenge Team 학식모야 창업 프로젝트 진행</div>
-            <div class="project-desc">활동 : 2025.09.29. ~ 2025.12.31.
+            <div class="project-meta">2025.09.29 – 2025.12.31</div>
 
-• 프로젝트 개요
-- 대학별 파편화된 학식 정보를 통합하고, 실사용자 중심의 객관적 맛 평가를 제공하는 웹 플랫폼 개발
+            <div class="desc-group">
+              <div class="desc-group-title">프로젝트 개요</div>
+              <ul class="desc-items">
+                <li>대학별 파편화된 학식 정보를 통합하고, 실사용자 중심의 객관적 맛 평가를 제공하는 웹 플랫폼 개발</li>
+              </ul>
+            </div>
 
-• 사용 기술 및 환경
-- Backend: PHP (Apache 서버 환경)
-- Frontend: HTML5, CSS3, JavaScript (반응형 UI/UX 구현)
-- Database: MySQL (관계형 DB 설계 및 데이터 무결성 확보)
-- Security: MD5 해시 함수를 활용한 사용자 비밀번호 암호화
+            <div class="desc-group">
+              <div class="desc-group-title">사용 기술 및 환경</div>
+              <ul class="desc-items">
+                <li><strong>Backend:</strong> PHP (Apache 서버 환경)</li>
+                <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (반응형 UI/UX 구현)</li>
+                <li><strong>Database:</strong> MySQL (관계형 DB 설계 및 데이터 무결성 확보)</li>
+                <li><strong>Security:</strong> MD5 해시 함수를 활용한 사용자 비밀번호 암호화</li>
+              </ul>
+            </div>
 
-• 주요 성과 및 결과
-- 데이터 구축: 팀원들이 직접 여러 대학을 방문하여 세밀한 현장 실사 및 맛 평가 데이터 수집
-- 시스템 구현: 실시간 식단 업데이트, 익명 토론 게시판, 맛 지략 기반 랭킹 시스템 및 관리자 페이지 구축
-- 평가 체계: 중복 평가 제한 및 평균 점수 산출 방식을 통해 정보의 신뢰성 확보
-- 최종 성과: 3개월간의 프로젝트를 통해 완성도 100%의 웹 플랫폼 프로토타입 개발 완료
+            <div class="desc-group">
+              <div class="desc-group-title">주요 성과 및 결과</div>
+              <ul class="desc-items">
+                <li><strong>[데이터 구축]</strong> 팀원들이 직접 여러 대학을 방문하여 현장 실사 및 맛 평가 데이터 수집</li>
+                <li><strong>[시스템 구현]</strong> 실시간 식단 업데이트, 익명 토론 게시판, 맛 지략 기반 랭킹 시스템 및 관리자 페이지 구축</li>
+                <li><strong>[평가 체계]</strong> 중복 평가 제한 및 평균 점수 산출 방식을 통해 정보의 신뢰성 확보</li>
+                <li><strong>[최종 성과]</strong> 3개월간의 프로젝트를 통해 완성도 100%의 웹 플랫폼 프로토타입 개발 완료</li>
+              </ul>
+            </div>
 
-• 내가 주요로 한 것
-- 팀원 역할 배치: 팀원들의 역할 구체화 및 작업분담
-- 작업총괄: 서류작업 진행 및 도움</div>
+            <div class="desc-group">
+              <div class="desc-group-title">나의 역할</div>
+              <ul class="desc-items">
+                <li><strong>팀원 역할 배치:</strong> 팀원들의 역할 구체화 및 작업 분담</li>
+                <li><strong>작업 총괄:</strong> 서류 작업 진행 및 도움</li>
+              </ul>
+            </div>
           </div>
-          
-          <div class="project_1">
+
+          <!-- 프로젝트 1: 여행 가방 -->
+          <div class="project" id="projects_1">
             <div class="project-title">3중 보안 여행 가방 안전장치 (Secure Travel Bag)</div>
-            <div class="project-desc">활동: 2025.09.05 ~ 2025.12.19 | 팀 프로젝트
+            <div class="project-meta">2025.09.05 – 2025.12.19 &nbsp;|&nbsp; 팀 프로젝트</div>
 
-• 프로젝트 개요
-- 유럽 등 해외 여행 시 소매치기 방지를 위한 3중 보안 시스템 설계 및 구현
-- 전도성 터치 감지, IR 센서, SOS 패닉 모드를 결합한 통합 보안 장치
+            <div class="desc-group">
+              <div class="desc-group-title">프로젝트 개요</div>
+              <ul class="desc-items">
+                <li>유럽 등 해외 여행 시 소매치기 방지를 위한 3중 보안 시스템 설계 및 구현</li>
+                <li>전도성 터치 감지, IR 센서, SOS 패닉 모드를 결합한 통합 보안 장치</li>
+              </ul>
+            </div>
 
-• 사용 기술 및 환경
-- Hardware: IR Sensor, C1815 Transistor, LM3914, 555 Timer IC, 능동 부저
-- Logic Gates: 7404 (NOT Gate), 7408 (AND Gate)
-- Circuit Design: Proteus (회로 시뮬레이션)
-- Power: 9V/5V 듀얼 전원
+            <div class="desc-group">
+              <div class="desc-group-title">사용 기술 및 환경</div>
+              <ul class="desc-items">
+                <li><strong>Hardware:</strong> IR Sensor, C1815 Transistor, LM3914, 555 Timer IC, 능동 부저</li>
+                <li><strong>Logic Gates:</strong> 7404 (NOT Gate), 7408 (AND Gate)</li>
+                <li><strong>Circuit Design:</strong> Proteus (회로 시뮬레이션)</li>
+                <li><strong>Power:</strong> 9V / 5V 듀얼 전원</li>
+              </ul>
+            </div>
 
-• 주요 구현 내용
-- Touch Loop: 맨손 접촉 시 전도성 감지를 통한 즉각 경보
-- IR Loop: 장갑/도구 사용 시도 감지 (비전도체 접근 차단)
-- SOS Mode: 555 타이머 기반 지속적 경보 시스템
-- LED 바/도트 디스플레이로 위험 수준 시각화 (LM3914 활용)
+            <div class="desc-group">
+              <div class="desc-group-title">주요 구현 내용</div>
+              <ul class="desc-items">
+                <li><strong>Touch Loop:</strong> 맨손 접촉 시 전도성 감지를 통한 즉각 경보</li>
+                <li><strong>IR Loop:</strong> 장갑/도구 사용 시도 감지 (비전도체 접근 차단)</li>
+                <li><strong>SOS Mode:</strong> 555 타이머 기반 지속적 경보 시스템</li>
+                <li><strong>LED 시각화:</strong> LM3914 활용, LED 바/도트 디스플레이로 위험 수준 표시</li>
+              </ul>
+            </div>
 
-• 내가 주요로 한 것
-- 디지털 회로 설계 및 논리 게이트 구성
-- 회로도 설계 및 시뮬레이션 검증</div>
-            
-            <!-- 이미지 갤러리 -->
+            <div class="desc-group">
+              <div class="desc-group-title">나의 역할</div>
+              <ul class="desc-items">
+                <li>디지털 회로 설계 및 논리 게이트 구성</li>
+                <li>회로도 설계 및 시뮬레이션 검증</li>
+              </ul>
+            </div>
+
             <div class="project-gallery">
               <div class="gallery-item" data-src="https://github.com/user-attachments/assets/c098fc97-1387-4232-9d9f-f63a10cf92de" data-caption="회로도 설계">
                 <img src="https://github.com/user-attachments/assets/c098fc97-1387-4232-9d9f-f63a10cf92de" alt="회로도">
@@ -883,7 +713,6 @@
       </main>
 
       <aside>
-        
         <section>
           <div class="section-title">소식</div>
           <p style="font-size:13px; color:var(--muted);">
@@ -926,18 +755,15 @@
             <a href="#activities" style="color:var(--primary);">활동</a>
           </p>
         </section>
-        
       </aside>
     </div>
 
     <footer>
       © 2026 박정민 · 최종 수정: <span id="last-update">2026-03-07</span>
     </footer>
-    
   </div>
 
   <script>
-    // 부드러운 스크롤
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', e => {
         const target = document.querySelector(link.getAttribute('href'));
@@ -948,7 +774,6 @@
       });
     });
 
-    // 다크모드 토글 기능
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const html = document.documentElement;
@@ -960,13 +785,11 @@
     themeToggle.addEventListener('click', () => {
       const currentTheme = html.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
       html.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
     });
 
-    // 라이트박스 기능
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxCaption = document.getElementById('lightboxCaption');
@@ -977,7 +800,6 @@
     let currentImages = [];
     let currentIndex = 0;
 
-    // 갤러리 아이템 클릭 이벤트
     document.querySelectorAll('.gallery-item').forEach((item, index) => {
       item.addEventListener('click', () => {
         currentImages = Array.from(document.querySelectorAll('.gallery-item'));
@@ -988,11 +810,8 @@
 
     function openLightbox(index) {
       const item = currentImages[index];
-      const src = item.getAttribute('data-src');
-      const caption = item.getAttribute('data-caption');
-      
-      lightboxImage.src = src;
-      lightboxCaption.textContent = caption;
+      lightboxImage.src = item.getAttribute('data-src');
+      lightboxCaption.textContent = item.getAttribute('data-caption');
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -1012,22 +831,16 @@
       openLightbox(currentIndex);
     }
 
-    // 이벤트 리스너
     lightboxClose.addEventListener('click', closeLightbox);
     lightboxPrev.addEventListener('click', showPrevImage);
     lightboxNext.addEventListener('click', showNextImage);
     
-    // 배경 클릭 시 닫기
     lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
+      if (e.target === lightbox) closeLightbox();
     });
 
-    // 키보드 네비게이션
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('active')) return;
-      
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') showPrevImage();
       if (e.key === 'ArrowRight') showNextImage();

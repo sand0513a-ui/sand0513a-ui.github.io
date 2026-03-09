@@ -727,31 +727,40 @@
       <div class="section-title">개인 프로젝트</div>
           
       <div class="project" id="projects_4">
-  <div class="project-title">AI 오케스트레이션: 초등 교과 맞춤형 문제집 자동 생성 파이프라인</div>
-  <div class="project-desc">활동 : 2026.02.22 ~ 2026.02.23 | AI와의 1인 프로젝트
-• 프로젝트 개요
+<div class="project-title">AI 오케스트레이션: 교과 맞춤형 문제집 자동 생성 파이프라인</div>
+<div class="project-desc">활동 : 2026.02.22 ~ 2026.02.23 | 1인 개발 / AI 협업
+- 프로젝트 개요
 - Claude와의 고도화된 프롬프트 엔지니어링을 통해 기획부터 로직 구현까지 진행한 AI 협업 프로젝트
 - 시중 문제집의 높은 비용과 수동 문서 작업의 번거로움을 해결하기 위해, AI가 생성한 문제를 즉시 PDF로 변환 및 출력하는 자동화 도구 개발
-• 사용 기술 및 환경
-- AI Tools: GPT-4o mini (API, 문제 생성)
+
+- 사용 기술 및 환경
+- AI Tools: GPT-4o mini (초등용), Gemini 2.5 Flash (교사 배포용) — API, 문제 생성
 - 개발 보조: Claude Sonnet (로직 설계, 코드 작성, 디버깅)
-- Environment: Python, PyQt5 (GUI), OpenAI API, ReportLab (PDF 엔진)
-• 주요 성과 및 결과
+- Environment: Python, PyQt5 (GUI), OpenAI API 및 Gemini API, ReportLab (PDF 엔진)
+
+- 주요 성과 및 결과
 - [워크플로우 통합] AI 문제 생성 - 전처리 - PDF 레이아웃 구성 - 인쇄 인터페이스의 완전 자동화
 - [트러블슈팅] 시스템 폰트 자동 탐색 로직을 제안하여 한글 렌더링 및 이식성 문제 해결
 - [사용자 경험] 다크모드 UI 및 실시간 미리보기 확대/축소 기능을 도입, 생성된 문제·힌트·정답 직접 수정 기능을 추가하여 실제 학습 도구 수준의 편의성 확보
 - [성능] 기본 3문제 생성 시 약 8초, 문제 추가당 약 1~2초 소요로 빠른 응답성 확보
 - [비용] 5문제 생성 시 GPT-4o mini API 평균 약 800토큰 소모 → 약 0.4원~0.5원 수준 (OpenAI 공식 요금 명세 기준 산출). 시중 문제집 5문제당 약 100원~150원 대비 약 250배 저렴
-• 나의 역할 (AI Orchestrator &amp; Architect)
-- 요구사항 정의: 교육적 목적에 부합하는 문제 유형 및 난이도 조절 로직 설계, 생성된 문제 수정 및 확대 기능, 다크모드 UI 제안 및 디자인, 저장 방식 세분화 방식 제안
-- 프롬프트 설계: JSON 구조 출력을 강제하고 초등 교육 페르소나를 주입하여 데이터 무결성 확보
-- 시스템 통합 및 디버깅: AI가 생성한 코드를 검증하고, 모듈 간 데이터 흐름 조율 및 성능 최적화
-  • 버전 히스토리
-- v1 (3st_worksheet_generator.py / 02.22) : 기본 문제 생성 및 PDF·PNG 출력, 다크모드 UI, 실시간 미리보기 (확대/축소 슬라이더)
-- v1-edu (c_worksheet_generator.py / 03.07) : C언어 교사 배포용 파생 — Gemini 2.5 Flash로 엔진 교체(무료 일 10회), 인라인 문제 편집, 2단계 AI 교차검증 추가
-- v2 (진행중) : 인라인 문제 편집, AI 교차검증 추가 (교차검증 토글 선택 가능)
-  </div>
 
+- 나의 역할 (AI Orchestrator &amp; Architect)
+- 요구사항 정의: 교육적 목적에 부합하는 문제 유형 및 난이도 조절 로직 설계, 인라인 문제 편집 및 확대 기능, 다크모드 UI 제안 및 디자인, 저장 방식 세분화 제안
+- 프롬프트 설계: JSON 구조 출력을 강제하고 교과 맞춤 페르소나를 주입하여 데이터 무결성 확보, 2단계 AI 교차검증 파이프라인 설계
+- 시스템 통합 및 디버깅: 모듈 간 데이터 흐름 조율, 32비트 Python 환경 호환 문제 트러블슈팅, bat 스크립트 기반 무설치 배포 방식 설계
+- 파생 버전 기획 및 배포: v1-edu를 교사 실사용 환경에 맞게 독립 브랜치로 설계하고 현직 교사에게 직접 전달
+
+- 버전 히스토리
+
+  [메인 라인]
+  - v1 (3rd_worksheet_generator.py / 2026.02.22) : 초등용 — 기본 문제 생성 및 PDF·PNG 출력, 다크모드 UI, 실시간 미리보기 (확대/축소 슬라이더)
+  - v2 (진행중) : 인라인 문제 편집, AI 교차검증 토글 추가
+
+  [파생 브랜치]
+  - v1-edu (c_worksheet_generator_edu.py / 2026.03.07) : C언어 교사 배포용 — Gemini 2.5 Flash 엔진 교체, 인라인 문제 편집, AI 교차검증 추가
+    → v1-edu 실배포 검증을 통해 위 기능을 v2 메인 라인에 반영
+</div>
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
               <a href="https://drive.google.com/drive/folders/1UMB7EtCeLWyBPyHFGIP5eONNe3wKD5vw?usp=sharing" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; background:var(--primary); color:white; border-radius:8px; text-decoration:none; font-size:14px; transition:opacity 0.2s ease;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>

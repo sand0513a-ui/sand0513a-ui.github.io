@@ -166,7 +166,6 @@
     .pub-link { color: var(--primary); text-decoration: none; margin-left: 8px; font-size: 14px; transition: opacity 0.2s ease; }
     .pub-link:hover { opacity: 0.7; }
 
-    /* ==================== 프로젝트 섹션 (가독성 개선) ==================== */
     .project {
       margin-bottom: 28px;
       padding: 20px;
@@ -185,7 +184,6 @@
       line-height: 1.5;
     }
 
-    /* 날짜/개요 줄 */
     .project-meta {
       font-size: 13px;
       color: var(--muted);
@@ -196,7 +194,6 @@
       border-left: 3px solid var(--primary);
     }
 
-    /* 섹션 그룹 (• 프로젝트 개요 등) */
     .desc-group {
       margin-bottom: 14px;
     }
@@ -235,7 +232,6 @@
       font-weight: bold;
     }
 
-    /* 버전 히스토리 특별 스타일 */
     .version-block {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -271,7 +267,6 @@
       top: 5px;
     }
 
-    /* ==================== 이미지 갤러리 ==================== */
     .project-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -304,7 +299,6 @@
     }
     .gallery-item:hover .image-caption { transform: translateY(0); }
 
-    /* ==================== 라이트박스 ==================== */
     .lightbox {
       display: none;
       position: fixed;
@@ -481,10 +475,89 @@
           </ul>
         </section>
         
-        <!-- ======= 개인 프로젝트 ======= -->
         <section id="projects">
           <div class="section-title">개인 프로젝트</div>
-          
+
+          <!-- 프로젝트 5: 유튜브 알고리즘 교정기 -->
+          <div class="project" id="projects_5">
+            <div class="project-title">유튜브 알고리즘 교정기 & 일본 영상 확장기</div>
+            <div class="project-meta">2026.03.10 – 2026.03.16 &nbsp;|&nbsp; 1인 개발 / AI 협업</div>
+
+            <div class="desc-group">
+              <div class="desc-group-title">프로젝트 개요</div>
+              <ul class="desc-items">
+                <li>유튜브 알고리즘이 한쪽으로 치우친 정보만 제공하는 확증편향 문제를 해결하기 위한 AI 기반 교정 도구</li>
+                <li>사용자가 추천된 영상의 제목과 URL을 입력하면, AI가 성향을 분석하고 반대 관점의 검색어를 자동으로 제시하는 구조</li>
+                <li>API 접근이나 시청 기록 없이도 동작 가능한 비침투형 접근 방식 채택 — 영상 제목·URL만으로 분석</li>
+              </ul>
+            </div>
+
+            <div class="desc-group">
+              <div class="desc-group-title">사용 기술 및 환경</div>
+              <ul class="desc-items">
+                <li><strong>AI Tools:</strong> ChatGPT API (GPT 기반 성향 분석 및 키워드 생성) — Gemini API 시도 후 키 오류로 전환</li>
+                <li><strong>개발 보조:</strong> Claude (코드 작성, 디버깅)</li>
+                <li><strong>Environment:</strong> Python, PyQt5 (GUI), OpenAI API</li>
+              </ul>
+            </div>
+
+            <div class="desc-group">
+              <div class="desc-group-title">주요 성과 및 결과</div>
+              <ul class="desc-items">
+                <li><strong>[워크플로우]</strong> URL, 영상 제목 입력 → AI 요약 및 키워드 추출 → 반대 성향 키워드 생성 → 유튜브 검색어 조합 제시의 5단계 파이프라인 구현</li>
+                <li><strong>[정확도 검증]</strong> 동일 영상을 순서만 바꿔 제출해도 동일 성향이 출력됨을 확인, 재현성 입증</li>
+                <li><strong>[트러블슈팅]</strong> Gemini API 키 활성화 지연 문제 발생 → ChatGPT API로 전환하여 즉시 해결</li>
+                <li><strong>[자막 미지원 대응]</strong> 자막 없는 영상은 제목만으로 분석하는 fallback 로직 적용 — 정치 분야 특성상 제목에 성향이 명확히 드러남을 활용</li>
+                <li><strong>[파생 버전]</strong> v1.1 일본 영상 확장기 — 음악 장르·분위기 분석 → 한국어 3개 + 일본어 3개 검색어 제시 구조로 변형</li>
+              </ul>
+            </div>
+
+            <div class="desc-group">
+              <div class="desc-group-title">나의 역할 (기획 · 설계 · AI Orchestrator)</div>
+              <ul class="desc-items">
+                <li><strong>문제 정의 및 아이디어 도출:</strong> 유튜브 알고리즘의 확증편향 구조를 분석하고, API·시청 기록 없이 동작 가능한 해결 방식을 독자적으로 고안</li>
+                <li><strong>입력 설계:</strong> 정확도와 사용 편의성 균형을 위해 최소 3개~최대 10개 입력 범위 설정, 재미 접근과 실사용 모두 포괄</li>
+                <li><strong>UI 기획:</strong> 5페이지 흐름(입력 → 로딩 3단계 → 결과)을 PPT로 직접 설계 후 AI에게 구현 지시</li>
+                <li><strong>파생 버전 기획:</strong> 정치 교정기와 결이 다른 음악 확장기를 별도 파생으로 분리하고, 입력 범위를 1~3개로 재설정하여 독립 설계</li>
+              </ul>
+            </div>
+
+            <div class="desc-group">
+              <div class="desc-group-title">버전 히스토리</div>
+              <div class="version-block">
+                <div class="version-label">메인 라인</div>
+                <div class="version-item"><strong>v1</strong> (2st · 2026.03.15) — ChatGPT API 기반 최초 버전, 정치 성향 분석 → 반대 키워드 제시 구조</div>
+                <div class="version-item"><strong>v2</strong> (진행중) — 정치 외 다른 분야로의 확장, 분야별 키워드 스위치 고민 중</div>
+              </div>
+              <div class="version-block" style="margin-top:8px;">
+                <div class="version-label">파생 브랜치</div>
+                <div class="version-item"><strong>v1.1</strong> (youtube_fix_music.py · 2026.03.16) — 일본 영상 확장기: 음악 장르·분위기 분석 → 한국어 3개 + 일본어 3개 검색어 제시</div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; margin-top:4px;">
+              <a href="https://drive.google.com/drive/folders/1itPDWaL3LbXgpP22nFXg3Xy11p8frnt2?usp=sharing" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; background:var(--primary); color:white; border-radius:8px; text-decoration:none; font-size:14px; transition:opacity 0.2s ease;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                파일 다운받기
+              </a>
+              <a href="https://blog.naver.com/sand200505" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; background:var(--card-bg); color:var(--text); border:1px solid var(--border); border-radius:8px; text-decoration:none; font-size:14px; transition:all 0.2s ease;" onmouseover="this.style.background='var(--primary)';this.style.color='white';this.style.borderColor='var(--primary)'" onmouseout="this.style.background='var(--card-bg)';this.style.color='var(--text)';this.style.borderColor='var(--border)'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                개발 과정 보기
+              </a>
+            </div>
+
+            <div class="project-gallery">
+              <div class="gallery-item" data-src="https://github.com/user-attachments/assets/3ae3ea92-77b7-4158-b731-e034fd05e654" data-caption="결과 화면">
+                <img src="https://github.com/user-attachments/assets/3ae3ea92-77b7-4158-b731-e034fd05e654" alt="결과 화면">
+                <div class="image-caption">결과 화면</div>
+              </div>
+              <div class="gallery-item" data-src="https://github.com/user-attachments/assets/a340740d-3b03-47c1-bc6e-0492dfd9dacf" data-caption="실행 화면">
+                <img src="https://github.com/user-attachments/assets/a340740d-3b03-47c1-bc6e-0492dfd9dacf" alt="실행 화면">
+                <div class="image-caption">실행 화면</div>
+              </div>
+            </div>
+          </div>
+
           <!-- 프로젝트 4: AI 오케스트레이션 -->
           <div class="project" id="projects_4">
             <div class="project-title">AI 오케스트레이션: 교과 맞춤형 문제집 자동 생성 파이프라인</div>
@@ -502,7 +575,7 @@
               <div class="desc-group-title">사용 기술 및 환경</div>
               <ul class="desc-items">
                 <li><strong>AI Tools:</strong> GPT-4o mini (초등용), Gemini 2.5 Flash (교사 배포용) — API, 문제 생성</li>
-                <li><strong>개발 보조:</strong> Claude Sonnet (로직 설계, 코드 작성, 디버깅)</li>
+                <li><strong>개발 보조:</strong> Claude Sonnet (코드 작성, 디버깅)</li>
                 <li><strong>Environment:</strong> Python, PyQt5 (GUI), OpenAI API 및 Gemini API, ReportLab (PDF 엔진)</li>
               </ul>
             </div>
@@ -564,7 +637,6 @@
             </div>
           </div>
 
-          <!-- 프로젝트 3: 인공지능 개인 협업 -->
           <div class="project" id="projects_3">
             <div class="project-title">인공지능 개인 협업 프로젝트</div>
             <div class="project-meta">2026.01.31 – 진행중</div>
@@ -601,11 +673,9 @@
           </div>
         </section>
 
-        <!-- ======= 팀 프로젝트 ======= -->
         <section id="team-projects">
           <div class="section-title">팀 프로젝트</div>
 
-          <!-- 프로젝트 2: 학식모야 -->
           <div class="project" id="projects_2">
             <div class="project-title">Student Challenge Team 학식모야 창업 프로젝트 진행</div>
             <div class="project-meta">2025.09.29 – 2025.12.31</div>
@@ -646,7 +716,6 @@
             </div>
           </div>
 
-          <!-- 프로젝트 1: 여행 가방 -->
           <div class="project" id="projects_1">
             <div class="project-title">3중 보안 여행 가방 안전장치 (Secure Travel Bag)</div>
             <div class="project-meta">2025.09.05 – 2025.12.19 &nbsp;|&nbsp; 팀 프로젝트</div>
@@ -716,6 +785,7 @@
         <section>
           <div class="section-title">소식</div>
           <p style="font-size:13px; color:var(--muted);">
+            2026-03-16 유튜브 알고리즘 교정기 v1.1 파생 버전 완료<br>
             2026-01-31 인공지능 협업 프로젝트 진행중(개인)<br>
           </p>
         </section>
@@ -759,7 +829,7 @@
     </div>
 
     <footer>
-      © 2026 박정민 · 최종 수정: <span id="last-update">2026-03-07</span>
+      © 2026 박정민 · 최종 수정: <span id="last-update">2026-03-16</span>
     </footer>
   </div>
 

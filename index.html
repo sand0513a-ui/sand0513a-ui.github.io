@@ -419,7 +419,7 @@
   <div class="container">
     
     <header>
-      <img class="profile-img" src="parkjeongmin_face.jpg" alt="프로필 사진">
+      <img class="profile-img" id="profileImg" src="parkjeongmin_face.jpg" alt="프로필 사진" style="cursor:pointer;">
       <div class="header-info">
         <h1>박정민 <span style="font-size:16px; color:var(--muted);">(26.01.28공익입대)</span></h1>
         <div class="subtitle">
@@ -926,6 +926,22 @@
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') showPrevImage();
       if (e.key === 'ArrowRight') showNextImage();
+    });
+
+    const profileImg = document.getElementById('profileImg');
+    const realProfile = 'parkjeongmin_face.jpg';
+    const megumin = 'https://github.com/user-attachments/assets/a7b20a85-0440-4ce0-b938-c3b18ce5f9c6';
+    let isMegumin = false;
+
+    profileImg.addEventListener('click', () => {
+      isMegumin = !isMegumin;
+      profileImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      profileImg.style.opacity = '0';
+      setTimeout(() => {
+        profileImg.src = isMegumin ? megumin : realProfile;
+        profileImg.alt = isMegumin ? '메구밍' : '프로필 사진';
+        profileImg.style.opacity = '1';
+      }, 300);
     });
   </script>
 </body>

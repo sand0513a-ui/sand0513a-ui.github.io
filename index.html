@@ -209,6 +209,24 @@
       border-bottom: 1px dashed var(--border);
     }
 
+    /* 느낀점 전용 스타일 */
+    .desc-group.retrospect {
+      background: var(--card-bg);
+      border-left: 3px solid #8b5cf6;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 14px;
+      margin-top: 4px;
+    }
+
+    .desc-group.retrospect .desc-group-title {
+      color: #8b5cf6;
+      border-bottom-color: #8b5cf633;
+    }
+
+    [data-theme="dark"] .desc-group.retrospect {
+      background: rgba(139,92,246,0.08);
+    }
+
     .desc-items {
       list-style: none;
       padding: 0;
@@ -451,9 +469,6 @@
             개발 지식을 바탕으로 AI와 협업하여 아이디어를 실제 동작하는 결과물로 만드는 과정에 관심이 있습니다.<br>
             관련 논문과 지적은 많지만 정작 동작하는 해결책이 없는 문제들을 직접 만들거나, 기존에 존재하더라도 비용·효율 면에서 더 나은 방식으로 재설계하는 방향으로 접근합니다. 완성 후 방치하지 않고 버전 방식으로 체계적으로 관리합니다.
           </p>
-          <p style="margin-top:12px; font-size:14px; color:var(--muted);">
-            현재는 취미로 활동중
-          </p>
         </section>
 
         <section id="research">
@@ -638,41 +653,6 @@
               </div>
             </div>
           </div>
-
-          <div class="project" id="projects_3">
-            <div class="project-title">인공지능 개인 협업 프로젝트</div>
-            <div class="project-meta">2026.01.31 – 진행중</div>
-
-            <div class="desc-group">
-              <div class="desc-group-title">프로젝트 개요</div>
-              <ul class="desc-items">
-                <li>현재 개발자를 대체하고 있는 인공지능, 다른 전공 분야의 공모전에서 인공지능의 도움만으로 그 전공 공부 없이 공모전 수상이 가능할까.</li>
-              </ul>
-            </div>
-
-            <div class="desc-group">
-              <div class="desc-group-title">사용 기술 및 환경</div>
-              <ul class="desc-items">
-                <li>ChatGPT (인공지능)</li>
-                <li>Gemini (인공지능)</li>
-                <li>Claude (인공지능)</li>
-              </ul>
-            </div>
-
-            <div class="desc-group">
-              <div class="desc-group-title">주요 성과 및 결과</div>
-              <ul class="desc-items">
-                <li>—</li>
-              </ul>
-            </div>
-
-            <div class="desc-group">
-              <div class="desc-group-title">나의 역할</div>
-              <ul class="desc-items">
-                <li>—</li>
-              </ul>
-            </div>
-          </div>
         </section>
 
         <section id="team-projects">
@@ -712,8 +692,14 @@
             <div class="desc-group">
               <div class="desc-group-title">나의 역할</div>
               <ul class="desc-items">
-                <li><strong>팀 대표 · PM:</strong> 첫 대표 경험으로 개발 전반의 역할 조화를 익혔고, UI 우선 설계와 백엔드 연동 흐름을 체득한 것이 이후 단독 AI 프로젝트 기획의 토대가 됨</li>
                 <li><strong>팀원 역할 배치:</strong> 팀원들의 역할 구체화 및 작업 분담, 서류 작업 총괄</li>
+              </ul>
+            </div>
+
+            <div class="desc-group retrospect">
+              <div class="desc-group-title">느낀점</div>
+              <ul class="desc-items">
+                <li>첫 대표 경험으로 개발 전반의 역할 조화를 익혔고, UI 우선 설계와 백엔드 연동 흐름을 체득한 것이 이후 단독 AI 프로젝트 기획의 토대가 됨</li>
               </ul>
             </div>
 
@@ -779,14 +765,19 @@
 
         <section id="activities">
           <div class="section-title">활동 및 경험</div>
-          <p style="font-size:14px; color:var(--muted);">
+          <p style="font-size:13px; font-weight:700; color:var(--primary); margin-bottom:8px;">2026</p>
+          <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">
             • 유튜브 알고리즘 교정기 & 일본 영상 확장기 <a href="#projects_5" style="color:var(--primary);">(2026)</a><br>
             • AI 오케스트레이션: 교과 맞춤형 문제집 자동 생성 파이프라인 <a href="#projects_4" style="color:var(--primary);">(2026)</a><br>
-            • 인공지능 협업 개인 프로젝트 <a href="#projects_3" style="color:var(--primary);">(2026-진행중)</a><br>
+            • 인공지능 협업 개인 프로젝트 <a href="#projects_3" style="color:var(--primary);">(진행중)</a><br>
+          </p>
+          <p style="font-size:13px; font-weight:700; color:var(--primary); margin-bottom:8px;">2025</p>
+          <p style="font-size:14px; color:var(--muted);">
             • SCT(Student Challenge Team) 창업동아리 대표 / 학식모야 <a href="#projects_2" style="color:var(--primary);">(2025)</a><br>
             • 3중 보안 여행 가방 안전장치 <a href="#projects_1" style="color:var(--primary);">(2025)</a><br>
             • 컴퓨터공학부 연구 일원 <a href="https://chipeval.github.io/homepage/" style="color:var(--primary);" target="_blank" rel="noopener">(2025)</a><br>
-            • OVERFLOW 학생 동아리 부원 <a href="https://github.com/KNUT-2025" style="color:var(--primary);" target="_blank" rel="noopener">(2025)</a><br>
+            • <span style="color:#f97316;">OVERFLOW 학생 동아리 부원</span> <a href="https://github.com/KNUT-2025" style="color:#f97316;" target="_blank" rel="noopener">(2025)</a><br>
+            • <span style="color:#10b981;">크몽 템플릿 판매 — 대답이 달라지는 GPT 질문 템플릿</span> <a href="https://kmong.com/gig/653062" style="color:#10b981;" target="_blank" rel="noopener">(2025.03)</a><br>
           </p>
         </section>
 
@@ -846,7 +837,7 @@
     </div>
 
     <footer>
-      © 2026 박정민 · 최종 수정: <span id="last-update">2026-03-16</span>
+      © 2026 박정민 · 최종 수정: <span id="last-update">2026-03-18</span>
     </footer>
   </div>
 
